@@ -308,10 +308,11 @@ section {
 }
 
 .molecule-selector {
-    display: flex;
-    justify-content: center;
-    gap: 0.8rem;
-    z-index: 10;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(189, 232, 245, 0.1);
 }
 
 .mol-btn {

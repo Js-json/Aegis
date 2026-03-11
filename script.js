@@ -143,6 +143,29 @@ function initMoleculeViewer(container) {
                 [2, 9], [2, 10],
                 [3, 11], [3, 12], [3, 13]
             ]
+        },
+        carbondioxide: {
+            name: 'Carbon Dioxide',
+            formula: 'CO2',
+            atoms: [
+                { type: 'C', pos: [0, 0, 0] },
+                { type: 'O', pos: [-1.16, 0, 0] },
+                { type: 'O', pos: [1.16, 0, 0] }
+            ],
+            bonds: [
+                [0, 1], [0, 2] // Representing double bonds visually as single thick bonds or just two connections
+            ]
+        },
+        carbonmonoxide: {
+            name: 'Carbon Monoxide',
+            formula: 'CO',
+            atoms: [
+                { type: 'C', pos: [-0.6, 0, 0] },
+                { type: 'O', pos: [0.6, 0, 0] }
+            ],
+            bonds: [
+                [0, 1]
+            ]
         }
     };
 
@@ -150,12 +173,14 @@ function initMoleculeViewer(container) {
     const materials = {
         'C': new THREE.MeshPhongMaterial({ color: 0x333333, shininess: 60 }), // Dark Gray Carbon
         'H': new THREE.MeshPhongMaterial({ color: 0xdcdcdc, shininess: 40 }), // Light Gray Hydrogen
+        'O': new THREE.MeshPhongMaterial({ color: 0xcc0000, shininess: 60 }), // Red Oxygen
         'bond': new THREE.MeshPhongMaterial({ color: 0x888888, shininess: 20 })
     };
 
     const geometries = {
         'C': new THREE.SphereGeometry(0.5, 32, 32),
-        'H': new THREE.SphereGeometry(0.3, 32, 32)
+        'H': new THREE.SphereGeometry(0.3, 32, 32),
+        'O': new THREE.SphereGeometry(0.5, 32, 32)
     };
 
     let moleculeGroup = new THREE.Group();
