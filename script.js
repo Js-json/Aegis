@@ -1,5 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
+    // Hamburger Mobile Menu
+    // ==========================================
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuClose = document.getElementById('mobileMenuClose');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    hamburger?.addEventListener('click', () => mobileMenu.classList.add('open'));
+    mobileMenuClose?.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    mobileLinks.forEach(link => link.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+    // ==========================================
     // 3D Gas Molecule Viewer (Hero Section)
     // ==========================================
     const canvasContainer = document.getElementById('molecule-canvas');
@@ -73,7 +85,9 @@ function initMoleculeViewer(container) {
     const width = container.clientWidth;
     const height = container.clientHeight;
     renderer.setSize(width, height);
-    renderer.setPixelRatio(window.devicePixelRatio);
+    // Cap pixel ratio on mobile for GPU performance
+    const isMobile = window.innerWidth < 768;
+    renderer.setPixelRatio(isMobile ? Math.min(window.devicePixelRatio, 1.5) : window.devicePixelRatio);
     container.appendChild(renderer.domElement);
 
     // Camera

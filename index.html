@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>AegisAir | Environmental Intelligence Platform</title>
 
     <!-- Google Fonts -->
@@ -30,9 +30,23 @@
                 <a href="#features">Features</a>
                 <a href="#workflow">How It Works</a>
             </div>
-            <a href="https://aegis-air.vercel.app/" class="btn btn-primary nav-btn glow-cta">Get Started</a>
+            <a href="https://aegis-air.vercel.app/" class="btn btn-primary nav-btn glow-cta desktop-cta">Get Started</a>
+            <button class="hamburger" id="hamburger" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </nav>
+
+    <!-- Mobile Fullscreen Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">✕</button>
+        <nav class="mobile-nav-links">
+            <a href="#hero" class="mobile-link">Home</a>
+            <a href="#features" class="mobile-link">Features</a>
+            <a href="#workflow" class="mobile-link">How It Works</a>
+            <a href="https://aegis-air.vercel.app/" class="btn btn-primary mobile-cta">Get Started</a>
+        </nav>
+    </div>
 
     <!-- 2. Hero Section -->
     <section class="hero" id="hero">

@@ -33,7 +33,7 @@
    Reset & Scaffolding
    ============================================= */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
     background-color: var(--bg-primary);
@@ -43,6 +43,8 @@ body {
     overflow-x: hidden;
     position: relative;
     font-weight: 400;
+    min-width: 360px; /* Safety floor — ensures UI never collapses below smallest phone width */
+    width: 100%;
 }
 
 /* =============================================
@@ -780,3 +782,244 @@ h1 { color: var(--charcoal); }
 }
 
 .footer-links a:hover { color: var(--accent-primary); }
+
+/* =============================================
+   Fluid Typography
+   ============================================= */
+h1 { font-size: clamp(2rem, 5vw, 4.5rem); }
+h2 { font-size: clamp(1.6rem, 4vw, 3rem); }
+h3 { font-size: clamp(1.2rem, 2.5vw, 1.8rem); }
+p  { font-size: clamp(0.95rem, 2.5vw, 1.05rem); }
+
+/* =============================================
+   Hamburger Button (hidden on desktop)
+   ============================================= */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    min-width: 44px;
+    min-height: 44px;
+    border-radius: 0.5rem;
+}
+
+.hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--charcoal);
+    border-radius: 2px;
+    transition: all 0.25s ease;
+}
+
+/* =============================================
+   Mobile Fullscreen Menu
+   ============================================= */
+.mobile-menu {
+    position: fixed;
+    inset: 0;
+    background: #FFFFFF;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+}
+
+.mobile-menu.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.mobile-menu-close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--charcoal);
+    cursor: pointer;
+    min-width: 44px;
+    min-height: 44px;
+}
+
+.mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.mobile-link {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.mobile-link:hover { color: var(--accent-primary); }
+
+.mobile-cta {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    min-height: 44px;
+    padding: 0.75rem 2.5rem;
+}
+
+/* =============================================
+   Tablet Breakpoint — 1024px
+   ============================================= */
+@media (max-width: 1024px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .hero-visual { max-width: 520px; margin: 0 auto; }
+
+    .orbital-grid { gap: 2.5rem; }
+
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .span-2 { grid-column: span 2; }
+
+    .workflow-grid { gap: 1.5rem; }
+
+    .imp-container { gap: 2.5rem; }
+}
+
+/* =============================================
+   Mobile Breakpoint — 768px
+   ============================================= */
+@media (max-width: 768px) {
+    /* Nav: show hamburger, hide desktop links and CTA */
+    .nav-links    { display: none; }
+    .desktop-cta  { display: none; }
+    .hamburger    { display: flex; }
+
+    .capsule-nav {
+        padding: 0.75rem 1rem 0.75rem 1.5rem;
+        top: 1rem;
+        width: 96%;
+    }
+
+    /* Hero: single column */
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        text-align: center;
+    }
+
+    .hero-ctas { justify-content: center; flex-wrap: wrap; }
+
+    .hero-visual { max-width: 100%; }
+
+    .molecule-canvas-container { height: 260px !important; min-height: 260px; }
+
+    /* Orbital Hub: stack */
+    .orbital-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+
+    .stat { justify-content: center; }
+    .stat-group { align-items: center; }
+
+    .orbit-system {
+        max-width: 320px;
+        margin: 0 auto;
+        width: 320px;
+        height: 320px;
+    }
+
+    /* Scale orbit rings proportionally */
+    .inner-ring { width: 110px; height: 110px; }
+    .mid-ring   { width: 195px; height: 195px; }
+    .outer-ring { width: 299px; height: 299px; }
+
+    /* Bento: 1 column, large card back to normal */
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+    .span-2 { grid-column: span 1; }
+
+    /* Problem stats: stack */
+    .problem-stats {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    /* How It Works: stack */
+    .workflow-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .step-num { font-size: 3rem; }
+
+    /* Impact: stack */
+    .imp-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    /* CTA */
+    .cta-card {
+        max-width: 90%;
+        padding: 2rem;
+    }
+
+    /* Footer watermark */
+    .watermark {
+        font-size: clamp(3rem, 10vw, 12rem);
+    }
+
+    /* Touch targets */
+    .btn, .mol-btn, .nav-btn {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    .molecule-selector { gap: 0.75rem; }
+}
+
+/* =============================================
+   Mobile Breakpoint — 480px
+   ============================================= */
+@media (max-width: 480px) {
+    .container { padding: 0 1.25rem; }
+
+    section { padding: 5rem 0; }
+
+    .hero { padding-top: 7rem; }
+
+    .future-grid { grid-template-columns: 1fr; }
+
+    .hub-title { font-size: 3rem; }
+
+    .problem-stat-num { font-size: 2.2rem; }
+
+    .orbit-system {
+        width: 260px;
+        height: 260px;
+    }
+
+    .inner-ring { width: 88px;  height: 88px;  }
+    .mid-ring   { width: 158px; height: 158px; }
+    .outer-ring { width: 240px; height: 240px; }
+}
