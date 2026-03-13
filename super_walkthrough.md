@@ -82,9 +82,9 @@ A three-depth-layer architecture was applied to prevent the white base from feel
 
 ## Phase 8 — Link Sanitization & Support Integration
 - **Removed Links:** GitHub repository and personal contact email links were removed from the footer to keep the interface focused.
-- **Support Integration:** Added "Support Us" buttons to navigation bars. The top navigation buttons ("Get Started" and "Support Us") are grouped together in a `nav-actions` container for clean side-by-side alignment on the right.
+- **Support Integration:** Added "Support Us" and "Fire Force" buttons to navigation bars. The top navigation buttons ("Get Started", "Support Us", and "Fire Force") are grouped together in a `nav-actions` container for clean side-by-side alignment on the right.
 - **Navigation Polish:** Centered the main navigation links ("Home", "Features", "How It Works") perfectly within the capsule for better visual balance.
-- **Support Link:** The support button links to: `https://aegis-air-supportpage-vadv.vercel.app/`.
+- **Support Links:** "Support Us" links to `https://aegis-air-supportpage-vadv.vercel.app/` and "Fire Force" links to `https://aegisair-fireforce.vercel.app/`.
 
 ---
 
