@@ -80,6 +80,13 @@ A three-depth-layer architecture was applied to prevent the white base from feel
 
 ---
 
-## Phase 7 — Version Control
-- Remote set to `https://github.com/Js-json/Aegis-Landing`
-- All phases committed and pushed to `main`.
+## Phase 8 — Link Sanitization & Support Integration
+- **Removed Links:** GitHub repository and personal contact email links were removed from the footer to keep the interface focused.
+- **Support Integration:** Added "Support Us" buttons to both navigation and footer. In the desktop view, buttons are grouped in a `nav-actions` container for sharper alignment and improved visual hierarchy.
+- **Visual Refinement:** Expanded the "AEGISAIR" background watermark in the footer to `18vw` font-size and `0.25em` letter-spacing, ensuring it fills the entire horizontal length of the bottom section for a more dramatic, premium aesthetic.
+- **Support Link:** All support buttons link to: `https://aegis-air-supportpage-vadv.vercel.app/`.
+
+---
+
+## Phase 9 — Local Deployment
+- The site is configured for local preview and testing on `localhost:4000`.
