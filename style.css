@@ -220,6 +220,7 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative; /* Support for absolute centering */
 }
 
 .logo {
@@ -228,6 +229,15 @@ section {
     font-size: 1.4rem;
     letter-spacing: -0.04em;
     color: var(--charcoal);
+    z-index: 2; /* Keep above centered links if they overlap */
+}
+
+.nav-links {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    white-space: nowrap;
 }
 
 .nav-links a {
@@ -240,6 +250,12 @@ section {
 }
 
 .nav-links a:hover { color: var(--accent-primary); }
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    z-index: 2; /* Keep above centered links if they overlap */
+}
 
 .nav-btn {
     padding: 0.6rem 1.4rem;

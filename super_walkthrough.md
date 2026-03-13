@@ -82,9 +82,9 @@ A three-depth-layer architecture was applied to prevent the white base from feel
 
 ## Phase 8 — Link Sanitization & Support Integration
 - **Removed Links:** GitHub repository and personal contact email links were removed from the footer to keep the interface focused.
-- **Support Integration:** Added "Support Us" buttons to both navigation and footer. In the desktop view, buttons are grouped in a `nav-actions` container for sharper alignment and improved visual hierarchy.
-- **Visual Refinement:** Expanded the "AEGISAIR" background watermark in the footer to `18vw` font-size and `0.25em` letter-spacing, ensuring it fills the entire horizontal length of the bottom section for a more dramatic, premium aesthetic.
-- **Support Link:** All support buttons link to: `https://aegis-air-supportpage-vadv.vercel.app/`.
+- **Support Integration:** Added "Support Us" buttons to navigation bars. The top navigation buttons ("Get Started" and "Support Us") are grouped together in a `nav-actions` container for clean side-by-side alignment on the right.
+- **Navigation Polish:** Centered the main navigation links ("Home", "Features", "How It Works") perfectly within the capsule for better visual balance.
+- **Support Link:** The support button links to: `https://aegis-air-supportpage-vadv.vercel.app/`.
 
 ---
 
